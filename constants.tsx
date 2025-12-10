@@ -236,6 +236,11 @@ export const TRANSLATIONS: Record<Language, Translation> = {
       p2Bold: "writing science fiction",
       p2End: " or exploring new cultures, I bring a narrative-driven approach to data. Every number tells a story; I make sure it's heard."
     },
+    contactSection: {
+      title: "Ready to collaborate?",
+      text: "Whether you have a question, a project opportunity, or just want to discuss the latest in AI, my inbox is always open.",
+      btn: "Say Hi!"
+    },
     footer: {
       rights: "Santiago A. Jiménez. Engineered for performance."
     }
@@ -280,6 +285,11 @@ export const TRANSLATIONS: Record<Language, Translation> = {
       p2Start: "Más allá de la terminal, me enfoco en la creatividad. Ya sea",
       p2Bold: "escribiendo ciencia ficción",
       p2End: " o explorando nuevas culturas, aporto un enfoque narrativo a los datos. Cada número cuenta una historia; yo me aseguro de que sea escuchada."
+    },
+    contactSection: {
+      title: "¿Listo para colaborar?",
+      text: "Ya sea que tengas una pregunta, una oportunidad de proyecto o simplemente quieras discutir lo último en IA, mi bandeja de entrada siempre está abierta.",
+      btn: "¡Di Hola!"
     },
     footer: {
       rights: "Santiago A. Jiménez. Diseñado para rendimiento."

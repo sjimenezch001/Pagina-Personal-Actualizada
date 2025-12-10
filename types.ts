@@ -70,6 +70,11 @@ export interface Translation {
     p2Bold: string;
     p2End: string;
   };
+  contactSection: {
+    title: string;
+    text: string;
+    btn: string;
+  };
   footer: {
     rights: string;
   };

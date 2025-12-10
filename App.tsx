@@ -19,6 +19,17 @@ function MainContent() {
     document.title = `Santiago A. Jiménez | ${language === 'en' ? 'Data Scientist' : 'Científico de Datos'}`;
   }, [language]);
 
+  // Load Tally script for dynamic form resizing
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "https://tally.so/widgets/embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="font-body text-text-main bg-page min-h-screen selection:bg-accent/20 selection:text-white">
       <NavBar />
@@ -125,14 +136,47 @@ function MainContent() {
             </SectionFade>
           </div>
         </section>
+
+        {/* Contact CTA Section */}
+        <section id="contact" className="container py-24">
+          <SectionFade>
+            <div className="max-w-3xl mx-auto bg-card border border-border rounded-2xl p-8 md:p-12 relative overflow-hidden group hover:border-accent/40 transition-colors shadow-2xl">
+               {/* Decorative glow */}
+               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-transparent via-accent to-transparent opacity-50 group-hover:opacity-100 transition-opacity" />
+               
+               <div className="text-center mb-10">
+                 <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6 text-white">{t.contactSection.title}</h2>
+                 <p className="text-text-muted text-lg leading-relaxed max-w-xl mx-auto">
+                   {t.contactSection.text}
+                 </p>
+               </div>
+
+               {/* Tally Embed */}
+               <div className="w-full -mx-1 relative">
+                <iframe 
+                  src="https://tally.so/embed/KYz8l7?alignLeft=1&hideTitle=1&dynamicHeight=1"
+                  data-tally-src="https://tally.so/embed/KYz8l7?alignLeft=1&hideTitle=1&dynamicHeight=1" 
+                  loading="eager" 
+                  width="100%" 
+                  height="276" 
+                  frameBorder="0" 
+                  marginHeight={0} 
+                  marginWidth={0} 
+                  title="Contact Form"
+                >
+                </iframe>
+               </div>
+            </div>
+          </SectionFade>
+        </section>
       </main>
 
       {/* Footer */}
-      <footer id="contact" className="border-t border-border bg-card/30">
+      <footer className="border-t border-border bg-card/30">
         <div className="container py-16">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="text-center md:text-left">
-              <div className="font-heading font-bold text-xl mb-2 text-white">S.A.J.</div>
+              <div className="font-heading font-bold text-xl mb-2 text-white">SANTIAGO A. JIMÉNEZ</div>
               <p className="text-text-muted text-sm max-w-xs">
                 {t.footer.rights}
               </p>

@@ -36,9 +36,9 @@ const NavBar: React.FC = () => {
         isScrolled ? 'bg-page/80 backdrop-blur-xl border-b border-border' : 'bg-transparent py-4'
       }`}>
         <div className="container flex justify-between items-center h-16">
-          <div className="font-heading font-bold text-xl tracking-tight text-text-main flex items-center gap-2">
+          <div className="font-heading font-bold text-lg md:text-xl tracking-tight text-text-main flex items-center gap-2 uppercase">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-            S.A.J.
+            SANTIAGO A. JIMÉNEZ
           </div>
           
           <div className="flex items-center gap-8">

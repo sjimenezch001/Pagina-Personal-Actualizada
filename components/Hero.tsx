@@ -6,6 +6,21 @@ import { useLanguage } from './LanguageContext';
 const Hero: React.FC = () => {
   const { t } = useLanguage();
 
+  const handleScrollToWork = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const element = document.getElementById('work');
+    if (element) {
+      const offset = 100; // Offset for navbar + breathing room
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <section className="min-h-screen flex flex-col justify-center pt-24 pb-12 relative overflow-hidden">
       {/* Background Gradients - Warmer, Orange Tones */}
@@ -41,6 +56,7 @@ const Hero: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 mb-16">
               <a 
                 href="#work" 
+                onClick={handleScrollToWork}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-page rounded-lg font-semibold hover:bg-orange-50 transition-all duration-200 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,109,0,0.2)]"
               >
                 {t.hero.btnProject} <ArrowRight className="w-4 h-4" />
